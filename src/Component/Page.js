@@ -21,9 +21,9 @@ export default function Page(props) {
 
   useEffect(() => {
     GetNews(props.type).then((res) => {
-      if (res.status === "error") {
-        res = jsondata;
-      }
+      // if (res.status === "error") {
+      //   res = jsondata;
+      // }
       setresults(res.results);
       settotal(res.totalResults);
 
