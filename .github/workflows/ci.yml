@@ -1,9 +1,12 @@
-name: CI
-on: [push]
+name: CI Pipeline
+on: [push, pull_request]  # Triggers on push/PR
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Correct indentation (2 spaces)
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
       - name: Run tests
-         run: npm test
+        run: npm test
